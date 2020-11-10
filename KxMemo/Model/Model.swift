@@ -10,11 +10,11 @@ import UIKit
 
 class Memo {
     var content: String
-    var insertData: Date
+    var insertDate: Date
     
     init(content: String) {
         self.content = content
-        self.insertData = Date()
+        self.insertDate = Date()
     }
     
     static var dummyMemoList = [ Memo(content: "새벽에 위장약"), Memo(content: "새벽에 8Km 이상 달리기"), Memo(content: "아침 식사후 출근")]

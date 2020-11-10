@@ -34,6 +34,14 @@ class MemoListTableViewController: UITableViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
+            if let vc = segue.destination as? DetailViewController {
+                vc.memo = Memo.dummyMemoList[indexPath.row]
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -68,7 +76,7 @@ class MemoListTableViewController: UITableViewController {
 
         let target = Memo.dummyMemoList[indexPath.row]
         cell.textLabel?.text = target.content
-        cell.detailTextLabel?.text = formatter.string(from: target.insertData)
+        cell.detailTextLabel?.text = formatter.string(from: target.insertDate)
         
         return cell
     }

@@ -16,6 +16,7 @@
 		912F1E2825594EAB000D37EC /* MemoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912F1E2725594EAB000D37EC /* MemoListTableViewController.swift */; };
 		912F1E2B255959A2000D37EC /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912F1E2A255959A2000D37EC /* ComposeViewController.swift */; };
 		912F1E2E25595E21000D37EC /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912F1E2D25595E21000D37EC /* UIViewController+Alert.swift */; };
+		9134F179255ABC69005AF7A6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9134F178255ABC69005AF7A6 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		912F1E2725594EAB000D37EC /* MemoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListTableViewController.swift; sourceTree = "<group>"; };
 		912F1E2A255959A2000D37EC /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		912F1E2D25595E21000D37EC /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		9134F178255ABC69005AF7A6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				912849B12558255300372F3D /* SceneDelegate.swift */,
 				912849B52558255300372F3D /* Main.storyboard */,
 				912F1E2D25595E21000D37EC /* UIViewController+Alert.swift */,
+				9134F178255ABC69005AF7A6 /* DetailViewController.swift */,
 				912F1E2A255959A2000D37EC /* ComposeViewController.swift */,
 				912849B82558255400372F3D /* Assets.xcassets */,
 				912849BA2558255400372F3D /* LaunchScreen.storyboard */,
@@ -160,6 +163,7 @@
 				912F1E2E25595E21000D37EC /* UIViewController+Alert.swift in Sources */,
 				912849B22558255300372F3D /* SceneDelegate.swift in Sources */,
 				912F1E2825594EAB000D37EC /* MemoListTableViewController.swift in Sources */,
+				9134F179255ABC69005AF7A6 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
