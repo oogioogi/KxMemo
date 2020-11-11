@@ -116,7 +116,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ST-Y3-QqX">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
-                                    <barButtonItem title="Item" id="22P-Lq-440"/>
+                                    <barButtonItem systemItem="compose" id="22P-Lq-440">
+                                        <connections>
+                                            <segue destination="2u6-I4-ofJ" kind="presentation" id="cpD-aV-SjU"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -133,10 +137,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="52p-L8-bKm"/>
+                    <connections>
+                        <outlet property="editTableView" destination="F32-hv-ecj" id="d3e-QX-r0U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDD-79-Ed2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1111.5942028985507" y="423.88392857142856"/>
+            <point key="canvasLocation" x="890" y="412"/>
         </scene>
         <!--새메모-->
         <scene sceneID="DWn-gE-7ex">
@@ -165,12 +172,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="새메모" id="O6V-Gf-BZe">
-                        <barButtonItem key="leftBarButtonItem" image="arrow.left" catalog="system" id="vNL-An-OVw">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="vNL-An-OVw">
                             <connections>
                                 <action selector="close:" destination="GDD-8d-hUa" id="Wgi-2z-IrB"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="square.and.arrow.down" catalog="system" id="TRa-sC-wwn">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="TRa-sC-wwn">
                             <connections>
                                 <action selector="save:" destination="GDD-8d-hUa" id="3kI-OK-k9H"/>
                             </connections>
@@ -182,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pw2-2m-lVb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1928" y="-353"/>
+            <point key="canvasLocation" x="2738" y="42"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xjj-Gv-pKi">
@@ -216,12 +223,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zuo-1h-i7n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1112" y="-353"/>
+            <point key="canvasLocation" x="1841" y="42"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="cpD-aV-SjU"/>
+    </inferredMetricsTieBreakers>
     <resources>
-        <image name="arrow.left" catalog="system" width="128" height="98"/>
-        <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

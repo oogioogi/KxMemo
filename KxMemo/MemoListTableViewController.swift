@@ -20,6 +20,7 @@ class MemoListTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        DataManager.shared.fetchMemo()
         tableView.reloadData()
         print(#function) // 로그 출력
     }

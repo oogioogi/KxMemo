@@ -34,6 +34,16 @@ class DataManager {
         
     }
     
+    // 데이터 베이스에 새로운 메모 추가 저장
+    func AddNewMemo(_ memo: String) {
+        let newMemo = Memo(context: mainContenxt)
+        newMemo.content = memo
+        newMemo.insertDate = Date()
+        
+        memoList.insert(newMemo, at: 0)
+        saveContext()
+    }
+    
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {

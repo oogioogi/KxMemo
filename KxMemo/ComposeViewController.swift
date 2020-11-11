@@ -8,17 +8,26 @@
 import UIKit
 
 class ComposeViewController: UIViewController {
-
+    @IBOutlet weak var memoTextView: UITextView!
+    var editTarget: Memo?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        if let memo = editTarget {
+            navigationItem.title = "메모 편집"
+            memoTextView.text = memo.content
+        }else {
+            navigationItem.title = "새 메모"
+            memoTextView.text = ""
+        }
     }
+    // 닫기
     @IBAction func close(_ sender: Any) {
         dismiss(animated: true, completion: nil )
     }
     
-    @IBOutlet weak var memoTextView: UITextView!
+    // 저장
     @IBAction func save(_ sender: Any) {
         guard let memo = memoTextView.text, memo.count > 0 else {
             alertView(message: "내용이 없어요!")
@@ -28,24 +37,21 @@ class ComposeViewController: UIViewController {
 //        let newMemo = Memo(content: memo)  // 새 메모를 생성
 //        Memo.dummyMemoList.append(newMemo) // 배열에
         
-        NotificationCenter.default.post(name: ComposeViewController.newMemoDidInsert, object: nil)
+        if let target = editTarget {
+            target.content = memo
+            DataManager.shared.saveContext()
+            NotificationCenter.default.post(name: ComposeViewController.editMemoDidInsert, object: nil)
+        }else {
+            DataManager.shared.AddNewMemo(memo) // 새 메모를 생성
+            NotificationCenter.default.post(name: ComposeViewController.newMemoDidInsert, object: nil)
+        }
         
         dismiss(animated: true, completion: nil)// 닫기
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension ComposeViewController {
     
     static let newMemoDidInsert = Notification.Name(rawValue: "newMemoDidInsert")
+    static let editMemoDidInsert = Notification.Name(rawValue: "editMemoDidInsert")
 }
