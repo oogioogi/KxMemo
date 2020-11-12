@@ -36,6 +36,26 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var editTableView: UITableView!
     
+    @IBAction func shareMemo(_ sender: Any) {
+        guard let memo = memo?.content else { return }
+        
+        let vc = UIActivityViewController(activityItems: [memo], applicationActivities: nil)
+        present(vc, animated: true, completion: nil)
+    }
+    @IBAction func deleteMemo(_ sender: Any) {
+        let alert = UIAlertController(title: "경고", message: "메모를 삭제 할까요?", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "삭제", style: .destructive) { [weak self] (action) in
+            DataManager.shared.deleteMemo(self?.memo)
+            self?.navigationController?.popViewController(animated: true)
+        }
+        alert.addAction(okAction)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel) { (action) in
+            
+        }
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

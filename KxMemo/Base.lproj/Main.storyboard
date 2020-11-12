@@ -116,9 +116,21 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ST-Y3-QqX">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
+                                    <barButtonItem systemItem="trash" id="hA5-nC-fxM">
+                                        <connections>
+                                            <action selector="deleteMemo:" destination="XDt-7J-eL1" id="f6T-0x-0VO"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="fy2-gA-xAX"/>
                                     <barButtonItem systemItem="compose" id="22P-Lq-440">
                                         <connections>
                                             <segue destination="2u6-I4-ofJ" kind="presentation" id="cpD-aV-SjU"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="9UG-ce-kgE"/>
+                                    <barButtonItem systemItem="action" id="pnC-Kd-iLb">
+                                        <connections>
+                                            <action selector="shareMemo:" destination="XDt-7J-eL1" id="eHL-xe-bTm"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>

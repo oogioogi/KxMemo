@@ -33,6 +33,13 @@ class DataManager {
         }
         
     }
+    // 메모 삭제
+    func deleteMemo(_ memo: Memo?){
+        if let memo = memo {
+            mainContenxt.delete(memo)
+            saveContext() 
+        }
+    }
     
     // 데이터 베이스에 새로운 메모 추가 저장
     func AddNewMemo(_ memo: String) {
@@ -58,7 +65,6 @@ class DataManager {
     }()
 
     // MARK: - Core Data Saving support
-
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
