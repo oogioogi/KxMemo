@@ -40,6 +40,10 @@ class DetailViewController: UIViewController {
         guard let memo = memo?.content else { return }
         
         let vc = UIActivityViewController(activityItems: [memo], applicationActivities: nil)
+        
+        if let pc = vc.popoverPresentationController {
+            pc.barButtonItem = sender as? UIBarButtonItem
+        }
         present(vc, animated: true, completion: nil)
     }
     @IBAction func deleteMemo(_ sender: Any) {
